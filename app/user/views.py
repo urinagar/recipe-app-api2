@@ -24,7 +24,7 @@ class UpdateAndRetrieveUserView(generics.RetrieveUpdateAPIView):
     """Update a existing user in the system."""
     serializer_class = UserSerializer
     authentication_classes = [authentication.TokenAuthentication]
-    permissions_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     def get_object(self):
         return self.request.user
 
